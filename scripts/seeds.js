@@ -70,8 +70,71 @@ const species = [
 ]
 await sequelize.sync({force: true})
 
-await Species.bulkCreate(species)
-await Category.bulkCreate(categories)
+const oneSpecies = await Species.bulkCreate(species)
+const oneCategory = await Category.bulkCreate(categories)
 
+
+const frogSpecies = await Species.findOne({
+    where: {animal: 'Frog'}
+})
+const frogCategory = await Category.findOne({
+    where: {name: 'Amphibian'}
+})
+await frogSpecies.setCategory(frogCategory)
+
+
+const elephantSpecies = await Species.findOne({
+    where: {animal: 'Elephant'}
+})
+const elephantCategory = await Category.findOne({
+    where: {name: 'Mammal'}
+})
+await elephantSpecies.setCategory(elephantCategory)
+
+
+
+const flamingoSpecies = await Species.findOne({
+    where: {animal: 'Flamingo'}
+})
+const flamingoCategory = await Category.findOne({
+    where: {name: 'Bird'}
+})
+await flamingoSpecies.setCategory(flamingoCategory)
+
+
+const ladybugSpecies = await Species.findOne({
+    where: {animal: 'Ladybug'}
+})
+const ladybugCategory = await Category.findOne({
+    where: {name: 'Bug'}
+})
+await ladybugSpecies.setCategory(ladybugCategory)
+
+
+const alligatorSpecies = await Species.findOne({
+    where: {animal: 'Alligator'}
+})
+const alligatorCategory = await Category.findOne({
+    where: {name: 'Reptile'}
+})
+await alligatorSpecies.setCategory(alligatorCategory)
+
+
+const blackwidowSpecies = await Species.findOne({
+    where: {animal: 'Black widow'}
+})
+const blackwidowCategory = await Category.findOne({
+    where: {name: 'Other'}
+})
+await blackwidowSpecies.setCategory(blackwidowCategory)
+
+
+const octopusSpecies = await Species.findOne({
+    where: {animal: 'Octopus'}
+})
+const octopusCategory = await Category.findOne({
+    where: {name: 'Fish'}
+})
+await octopusSpecies.setCategory(octopusCategory)
 
 await sequelize.close()
