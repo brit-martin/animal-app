@@ -17,10 +17,11 @@ app.get('/animals', async (req, res) => {
 
 app.post('/add-animal', async (req, res) => {
     const { animal, length, color, category} = req.body
-    if (!animal || !length || !color ){
-        res.send('All fields are required to sign up')
-        return
-    }
+    console.log(category, animal, length, color)
+    // if (!animal || !length || !color ){
+    //     res.send('All fields are required to sign up')
+    //     return
+    // }
     let gettingCategory = await Category.findOne({
         where: {name: category}
     })

@@ -1,0 +1,25 @@
+.create-animal {
+    display: flex;
+    height: 50px;
+    align-items: center; 
+    border: 3px solid lightcoral;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 10px;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black; 
+}
+.animal-input{
+    padding: 5px;
+}
+.savebtn {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 7px
+
+}
