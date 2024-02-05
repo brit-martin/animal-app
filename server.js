@@ -32,8 +32,14 @@ app.post('/add-animal', async (req, res) => {
         color: color,
         categoryId: gettingCategory.id
     })
-    console.log(newSpecies)
-        res.status(200).send(newSpecies)
+    // console.log(newSpecies)
+    let updatedSpecies = await Species.findAll({
+        include: [{
+            model: Category,
+        }]
+    })
+    console.log(updatedSpecies)
+        res.status(200).send(updatedSpecies)
     })
 
 

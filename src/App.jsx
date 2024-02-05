@@ -4,7 +4,7 @@ import './App.css'
 import AddAnimal from './components/AddAnimal'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
