@@ -2,8 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import './addanimal.css'
 
-export default function AddAnimal(){
-    const [showAnimals, setShowAnimals] = useState(false)
+export default function AddAnimal({animalObj, setAnimalObj}){
     const [nameInput, setNameInput] = useState('')
     const [categoryInput, setCategoryInput] = useState('')
     const [colorInput, setColorInput] = useState('')
@@ -23,8 +22,7 @@ export default function AddAnimal(){
         }
         axios.post('/add-animal', myBody)
         .then((response) => {
-            setShowAnimals(true)
-            console.log(response.data)
+           setAnimalObj(response.data)
             
         })
         .catch((error) => {

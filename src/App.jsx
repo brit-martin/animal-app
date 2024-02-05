@@ -4,12 +4,19 @@ import './App.css'
 import AddAnimal from './components/AddAnimal'
 
 function App() {
+  const [animalObj, setAnimalObj] = useState([])
  
 
   return (
     <>
-    <AddAnimal/>
-    <Card/>
+    <AddAnimal
+      animalObj = {animalObj}
+      setAnimalObj = {setAnimalObj}
+    />
+      <Card
+      animalObj = {animalObj}
+      setAnimalObj = {setAnimalObj}
+    />
     </>
   )
 }

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import './card.css'
 
 
-export default function Card (){
-const [animalObj, setAnimalObj] = useState([])
+export default function Card ({setAnimalObj, animalObj}){
+ 
 
     useEffect(() => {
         axios.get('/animals')
