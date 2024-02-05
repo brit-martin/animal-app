@@ -33,6 +33,9 @@ Species.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    image: {
+        type: DataTypes.TEXT,
+    }
 },{
     modelName: 'species',
     sequelize: sequelize

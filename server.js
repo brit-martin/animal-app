@@ -12,7 +12,7 @@ app.get('/animals', async (req, res) => {
         }]
     })
         res.status(200).send(animalSpeciesArr)
-        // console.log(animalSpeciesArr)
+        console.log(animalSpeciesArr)
 })
 
 app.post('/add-animal', async (req, res) => {

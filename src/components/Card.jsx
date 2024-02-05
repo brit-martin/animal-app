@@ -26,6 +26,7 @@ export default function Card ({setAnimalObj, animalObj}){
                 return (
                     <div key={element.id} className='animal-card'>
                         <h2 className='animal-name'>{element.animal}</h2>
+                        <img className='animal-images' src={element.image}/>
                         <h3>Length: {element.length}</h3>
                         <h3>Color: {element.color}</h3>
                         <h3>Category: {element.category.name}</h3>

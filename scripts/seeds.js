@@ -35,37 +35,44 @@ const species = [
     {
         animal: 'Frog',
         length: '3 in',
-        color: 'green'
+        color: 'green',
+        image: 'https://www.canr.msu.edu/contentAsset/image/44bc1519-3b22-42b7-9d10-46e3f9f20309/fileAsset/filter/Resize,Jpeg/resize_w/750/jpeg_q/80',
     },
     {
         animal: 'Elephant',
         length: '21 ft',
-        color: 'gray'
+        color: 'gray',
+        image: 'https://www.treehugger.com/thmb/tKe5Rn214X_AXAE-kRUbiu7pOuo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/front-view-of-a-bull-elephant-in-the-grasslands-of-amboseli-national-park--1219745751-08f3add138514ad091e82e29a11546cc.jpg',
     },
     {
         animal: 'Flamingo',
         length: '59 in',
-        color: 'Pink'
+        color: 'Pink',
+        image: 'https://shop.wwf.ca/cdn/shop/files/Flamingospeciesphoto.jpg?v=1695655278&width=2048'
     },
     {
         animal: 'Ladybug',
         length: '8 mm',
-        color: 'red'
+        color: 'red',
+        image: 'https://media.istockphoto.com/id/893470324/photo/ladybug-in-the-green-grass.jpg?s=612x612&w=0&k=20&c=KzMSMuQNJwcpjhtCeEwDiHoPGA_56lTcAeNnaw54D4M=',
     },
     {
         animal: 'Alligator',
         length: '15 ft',
-        color: 'Olive'
+        color: 'Olive',
+        image: 'https://cdn.mos.cms.futurecdn.net/AWMXeGZ4rCTCGMPXNPhS2i-1200-80.jpg',
     }, 
     {
         animal: 'Octopus',
         length: '3 ft',
-        color: 'redish brown'
+        color: 'redish brown',
+        image: 'https://media.istockphoto.com/id/1136409408/photo/close-up-view-of-a-common-octopus.jpg?s=612x612&w=0&k=20&c=PHlT9mhvOOhDf8mMmgOO-FkAf3EbpjpQtZiVFllH5P0=',
     },
     {
         animal: 'Black widow',
         length: '10 mm',
-        color: 'black'
+        color: 'black',
+        image: 'https://www.aces.edu/wp-content/uploads/2019/03/Black-Widow-Spider.jpg',
     },
 ]
 await sequelize.sync({force: true})
