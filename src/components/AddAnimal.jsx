@@ -8,6 +8,7 @@ export default function AddAnimal({animalObj, setAnimalObj}){
     const [colorInput, setColorInput] = useState('')
     const [lengthInput, setLengthInput] = useState('')
     const [imageInput, setImageInput] = useState('')
+    
 
     function addAnimalButton(){
         if (categoryInput === '' || categoryInput === '-- select an option --') {
@@ -22,11 +23,11 @@ export default function AddAnimal({animalObj, setAnimalObj}){
             color: colorInput,
             length: lengthInput
         }
-        console.log(myBody)
+        // console.log(myBody)
 
         axios.post('/add-animal', myBody)
         .then((response) => {
-            console.log(response.data)
+            // console.log(response.data)
            setAnimalObj(response.data)
            setNameInput('')
            setCategoryInput('')
@@ -38,6 +39,8 @@ export default function AddAnimal({animalObj, setAnimalObj}){
             console.log(error)
         })
     }
+   
+
     return (
         <>
         <div>
@@ -77,7 +80,7 @@ export default function AddAnimal({animalObj, setAnimalObj}){
                     onChange={(e) => setLengthInput(e.target.value)}/>
                     
 
-                <label htmlFor='image' className='animal-input'>Image URL:</label>    
+                <label htmlFor='image' className='animal-input'>Image:</label>    
                 <input
                     type='text'
                     name='image'
@@ -97,6 +100,7 @@ export default function AddAnimal({animalObj, setAnimalObj}){
                 <button onClick={addAnimalButton} className='animal-input savebtn'>Save</button>
             </div>
         </div>
+        
         </>
     )
 }

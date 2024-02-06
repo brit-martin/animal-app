@@ -17,11 +17,8 @@ app.get('/animals', async (req, res) => {
 
 app.post('/add-animal', async (req, res) => {
     const { animal, length, color, image, category} = req.body
-    console.log(category, animal, length, color)
-    // if (!animal || !length || !color ){
-    //     res.send('All fields are required to sign up')
-    //     return
-    // }
+    // console.log(category, animal, length, color)
+
     let gettingCategory = await Category.findOne({
         where: {name: category}
     })
@@ -39,11 +36,22 @@ app.post('/add-animal', async (req, res) => {
             model: Category,
         }]
     })
-    console.log(updatedSpecies)
+    // console.log(updatedSpecies)
         res.status(200).send(updatedSpecies)
     })
 
-
+app.get('/filter-animal', async (req, res) => {
+    const animalCategory = req.query.name
+    // console.log(animalCategory)
+    let filterAnimals = await Category.findAll({
+        where: {name: animalCategory},
+        include: [{
+            model: Species,
+        }]
+    })
+    console.log(filterAnimals)
+    res.status(200).send(filterAnimals)
+})
 
 ViteExpress.listen(app, 8090, () => {
     console.log('Server up and running on port 8090')
