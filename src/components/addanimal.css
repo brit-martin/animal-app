@@ -1,9 +1,10 @@
 .create-animal {
     display: flex;
+    flex-wrap: wrap;
     height: 50px;
     align-items: center; 
     border: 3px solid lightcoral;
-    padding: 5px;
+    padding: 15px;
     justify-content: center;
     border-radius: 10px;
 }

@@ -34,7 +34,7 @@ Species.init({
         allowNull: false,
     },
     image: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
     }
 },{
     modelName: 'species',

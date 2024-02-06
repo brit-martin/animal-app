@@ -22,7 +22,7 @@ export default function Card ({setAnimalObj, animalObj}){
         <div className='animals'>
             
             {animalObj.map((element) => {
-                {console.log(element)}
+                // {console.log(element)}
                 return (
                     <div key={element.id} className='animal-card'>
                         <h2 className='animal-name'>{element.animal}</h2>

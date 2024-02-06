@@ -7,6 +7,7 @@ export default function AddAnimal({animalObj, setAnimalObj}){
     const [categoryInput, setCategoryInput] = useState('')
     const [colorInput, setColorInput] = useState('')
     const [lengthInput, setLengthInput] = useState('')
+    const [imageInput, setImageInput] = useState('')
 
     function addAnimalButton(){
         if (categoryInput === '' || categoryInput === '-- select an option --') {
@@ -17,20 +18,26 @@ export default function AddAnimal({animalObj, setAnimalObj}){
         let myBody = {
             animal: nameInput,
             category: categoryInput,
+            image: imageInput,
             color: colorInput,
             length: lengthInput
         }
+        console.log(myBody)
+
         axios.post('/add-animal', myBody)
         .then((response) => {
+            console.log(response.data)
            setAnimalObj(response.data)
-            
+           setNameInput('')
+           setCategoryInput('')
+           setColorInput('')
+           setImageInput('')
+           setLengthInput('')
         })
         .catch((error) => {
             console.log(error)
         })
-
     }
-
     return (
         <>
         <div>
@@ -45,13 +52,12 @@ export default function AddAnimal({animalObj, setAnimalObj}){
                 onChange={(e) => setNameInput(e.target.value)}/>
 
                 <label htmlFor="category" className='animal-input'>Category:</label>
-                {/* <input type='text' name='category' value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}/> */}
                 <select 
                     name="category" 
                     id="add-animal"
-                    value={categoryInput}
-                    onChange={(e) => {console.log(e); setCategoryInput(e.target.value)}}
-                >
+                    value={categoryInput} 
+                    onChange={(e) => {setCategoryInput(e.target.value)}}
+                >   
                     <option selected>-- select an option --</option>
                     <option>Mammal</option>
                     <option>Reptile</option>
@@ -69,6 +75,17 @@ export default function AddAnimal({animalObj, setAnimalObj}){
                     value={lengthInput}
                     id='add-animal'
                     onChange={(e) => setLengthInput(e.target.value)}/>
+                    
+
+                <label htmlFor='image' className='animal-input'>Image URL:</label>    
+                <input
+                    type='text'
+                    name='image'
+                    value={imageInput}
+                    placeholder='http://www.example.com'
+                    id='add-animal'
+                    onChange={(e) => setImageInput(e.target.value)}
+                />
 
                 <label htmlFor="color" className='animal-input'>Color:</label>
                 <input 

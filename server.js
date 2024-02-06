@@ -16,7 +16,7 @@ app.get('/animals', async (req, res) => {
 })
 
 app.post('/add-animal', async (req, res) => {
-    const { animal, length, color, category} = req.body
+    const { animal, length, color, image, category} = req.body
     console.log(category, animal, length, color)
     // if (!animal || !length || !color ){
     //     res.send('All fields are required to sign up')
@@ -30,6 +30,7 @@ app.post('/add-animal', async (req, res) => {
         animal: animal,
         length: length,
         color: color,
+        image: image,
         categoryId: gettingCategory.id
     })
     // console.log(newSpecies)
