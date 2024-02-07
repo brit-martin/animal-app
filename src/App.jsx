@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Card from './components/Card'
+import Cards from './components/Cards'
 import './App.css'
 import AddAnimal from './components/AddAnimal'
 
@@ -13,7 +13,7 @@ function App() {
       animalObj = {animalObj}
       setAnimalObj = {setAnimalObj}
     />
-      <Card
+      <Cards
       animalObj = {animalObj}
       setAnimalObj = {setAnimalObj}
     />

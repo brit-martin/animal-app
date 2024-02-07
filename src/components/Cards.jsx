@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import './card.css'
+import './cards.css'
 
 
-export default function Card ({setAnimalObj, animalObj}){
+export default function Cards ({setAnimalObj, animalObj}){
     const [filterInput, setFilterInput] = useState('')
     
     // console.log(animalObj)
@@ -63,9 +63,9 @@ export default function Card ({setAnimalObj, animalObj}){
         <div className='animals'>
             
             {animalObj.map((element) => {
-                // {console.log(element)}
+                {console.log(element)}
                 return (
-                    <div key={element.id} className='animal-card'>
+                    <div key={element.id} className='animal-card' style={{backgroundColor: element.category.color}}>
                         <h2 className='animal-name'>{element.animal}</h2>
                         <img className='animal-images' src={element.image}/>
                         <h3>Length: {element.length}</h3>

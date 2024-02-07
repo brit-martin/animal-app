@@ -3,31 +3,31 @@ import { sequelize, Category, Species } from "../models/model.js";
 const categories = [
     {
         name: 'Mammal',
-        color: 'burgundy'
+        color: '#F89F5B'
     },
     {
         name: 'Reptile',
-        color: 'light green'
+        color: '#90EE90'
     },
     {
         name: 'Bird',
-        color: 'yellow'
+        color: '#E1AD01'
     },
     {
         name: 'Amphibian',
-        color: 'red'
+        color: '#cd5c5c'
     },
     {
         name: 'Fish',
-        color: 'Blue'
+        color: '#20B2AA'
     },
     {
         name: 'Bug',
-        color: 'purple'
+        color: '#653780'
     },
     {
         name: 'Other',
-        color: 'orange'
+        color: '#E53F71'
     },
 ]
 
