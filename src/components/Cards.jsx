@@ -22,10 +22,16 @@ export default function Cards ({setAnimalObj, animalObj}){
         axios.get(`/filter-animal?name=${filterInput}`)
         .then((response) => {
             let categoryName = response.data[0].name
+            let categoryColor = response.data[0].color
             
+            
+
             let animalList = response.data[0].species
-            for (let i = 0; i < animalList.length; i++) { 
-                animalList[i].category = {name: categoryName}
+            for (let i = 0; i < animalList.length; i++) {
+                console.log(animalList[i])
+                animalList[i].category = {name: categoryName, color: categoryColor}
+               
+               
             }
             console.log(animalList) 
 
@@ -63,7 +69,7 @@ export default function Cards ({setAnimalObj, animalObj}){
         <div className='animals'>
             
             {animalObj.map((element) => {
-                {console.log(element)}
+                // {console.log(element)}
                 return (
                     <div key={element.id} className='animal-card' style={{backgroundColor: element.category.color}}>
                         <h2 className='animal-name'>{element.animal}</h2>
@@ -71,7 +77,7 @@ export default function Cards ({setAnimalObj, animalObj}){
                         <h3>Length: {element.length}</h3>
                         <h3>Color: {element.color}</h3>
                         <h3>Category: {element.category.name}</h3>
-                        {console.log(element)}
+                        {/* {console.log(element)} */}
                     </div>
                 )
             })}
